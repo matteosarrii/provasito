@@ -4,8 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BuSa Technologies - Soluzioni web e gestionali professionali per la tua azienda">
+    <meta name="theme-color" content="#667eea">
     <title>BuSa Technologies | Siti Web e Gestionali Aziendali</title>
-    <style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header e Navbar -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">BuSa Technologies</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servizi.html">Servizi</a></li>
+                <li><a href="progetti.html">Progetti</a></li>
+                <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Trasforma il Tuo Business con la Tecnologia</h1>
+            <p>Siti web moderni e gestionali professionali per aziende in crescita</p>
+            <a href="contatti.html" class="btn">Contattaci</a>
+            <a href="servizi.html" class="btn btn-secondary">Scopri i Servizi</a>
+        </div>
+    </section>
+
+    <!-- Sezione Servizi Preview -->
+    <section class="container" style="padding: 80px 2rem;">
+        <h2 class="section-title">I Nostri Servizi Principali</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <h3>Siti Web Professionali</h3>
+                <p>Creiamo siti web responsivi e moderni, ottimizzati per i motori di ricerca e progettati per convertire i visitatori in clienti.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚙️</span>
+                <h3>Gestionali Aziendali</h3>
+                <p>Software personalizzato per gestire inventario, vendite, risorse umane e tutti i processi della tua azienda.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📱</span>
+                <h3>App Mobile</h3>
+                <p>Applicazioni iOS e Android native o cross-platform per raggiungere i tuoi clienti ovunque si trovino.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="servizi.html" class="btn btn-primary">Visualizza Tutti i Servizi</a>
+        </div>
+    </section>
+
+    <!-- Sezione Progetti Preview -->
+    <section class="container" style="padding: 80px 2rem; background: white;">
+        <h2 class="section-title">Ultimi Progetti</h2>
+        <div class="portfolio-grid" style="margin-bottom: 40px;">
+            <div class="portfolio-item">
+                <div class="portfolio-image">🏪</div>
+                <div class="portfolio-content">
+                    <h3>E-commerce Platform</h3>
+                    <p>Piattaforma di vendita online con gestione inventario completa.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">🏥</div>
+                <div class="portfolio-content">
+                    <h3>Sistema Prenotazioni Medici</h3>
+                    <p>Gestionale per clinica con prenotazioni online.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">📚</div>
+                <div class="portfolio-content">
+                    <h3>Piattaforma E-learning</h3>
+                    <p>Sistema di formazione online con corsi interattivi.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="progetti.html" class="btn btn-primary">Vedi Tutti i Progetti</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BuSa Technologies. Tutti i diritti riservati.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Termini di Servizio</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Mark active page
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
         * {
             margin: 0;
             padding: 0;
